@@ -1,5 +1,5 @@
 execute on passengers run tag @s[type=minecraft:marker,tag=ships.boatai.boat] add ships.boatai.patrol.selected
-execute at @s positioned ^ ^ ^1 rotated as @e[tag=ships.boatai.patrol.selected,limit=1] positioned ^ ^ ^.2 facing entity @s feet positioned as @s rotated ~180 0 run tp @s ~ ~ ~ ~ ~
+execute at @s positioned ^ ^ ^1 rotated as @e[tag=ships.boatai.patrol.selected,limit=1] positioned ^ ^ ^.2 facing entity @s feet positioned as @s rotated ~180 0 run rotate @s ~ ~
 tag @e remove ships.boatai.patrol.selected
 
 #execute if loaded ~ ~ ~ run summon minecraft:marker ~ ~ ~ {Tags:["ships.boatai.patrol.turn"]}
