@@ -6,7 +6,7 @@ execute as @e[type=#ships:uses_boat_melee,predicate=ships:target,predicate=ships
 execute as @e[tag=ships.boat] on controller at @s run data modify entity @s Rotation[0] set from entity @e[limit=1,sort=nearest,type=minecraft:oak_boat] Rotation[0]
 execute as @e[tag=ships.boat,predicate=!ships:water] on controller unless score @s ships.boat.cooldown matches 0.. at @s run function ships:boat/dismount
 #boat sink
-execute as @e[tag=ships.boat,predicate=ships:water] on controller unless score @s ships.boat.cooldown matches 0.. at @s rotated ~ 0 positioned ^ ^.5 ^1 unless predicate ships:water run function ships:boat/dismount
+execute as @e[tag=ships.boat,predicate=ships:water] on controller unless score @s ships.boat.cooldown matches 0.. at @s unless predicate ships:ship_structure rotated ~ 0 positioned ^ ^.5 ^1 unless predicate ships:water run function ships:boat/dismount
 execute as @e[tag=ships.boat] on controller if entity @s[nbt={Health:0f}] on vehicle run data modify entity @s Motion[1] set value -.25
 scoreboard players set @e[tag=ships.boat] ships.boatai.controller 0
 execute as @e[tag=ships.boat] store success score @s ships.boatai.controller on controller if entity @s
