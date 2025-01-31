@@ -1,4 +1,5 @@
 schedule function ships:slowtick 1s
+scoreboard players set Game ships.boat.count 0
 #ship entity spawning
 execute as @e[tag=ships.spawner,nbt=!{data:{center:0}}] at @s if loaded ~ ~ ~ if entity @e[type=minecraft:evoker,distance=0..64] run function ships:ship/spawn
 #always patrol gamerule
